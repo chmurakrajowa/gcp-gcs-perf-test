@@ -4,7 +4,7 @@ import "time"
 
 type config struct {
 	ApplicationName    string `env:"NAME" default:"gcp-gcs-perf-stat"`
-	ApplicationVersion string `env:"VERSION" default:"v0.1.1"`
+	ApplicationVersion string `env:"VERSION" default:"v0.1.2"`
 	InstanceGUID       string `env:"CF_INSTANCE_GUID"`
 
 	LogLevel   string `env:"LOGLEVEL" default:"TRACE"` // "PANIC"|"FATAL"|"ERROR"|"WARNING"|"INFO"|"DEBUG"|"TRACE"

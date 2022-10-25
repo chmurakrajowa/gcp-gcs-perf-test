@@ -1,5 +1,5 @@
 repo=$${REPO:-damianjaniszewski/gcp-gcs-perf-test}
-version=$${VERSION:-0.1.1}
+version=$${VERSION:-0.1.2}
 tag=$(version)
 
 build:

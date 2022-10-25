@@ -26,7 +26,7 @@ FROM alpine
 RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/*
 RUN update-ca-certificates
 
-LABEL version="0.1.1"
+LABEL version="0.1.2"
 LABEL author "Damian Janiszewski"
 
 # Copy binaries from stage 0 builder container
