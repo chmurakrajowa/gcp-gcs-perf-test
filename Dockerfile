@@ -21,7 +21,10 @@ COPY gcp-gcs-perf-test.go config.go init.go /go/src/
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -v -a -tags 'static netgo' -ldflags '-w' gcp-gcs-perf-test.go config.go init.go
 
 # Stage 1: running container 
-FROM scratch
+FROM alpine
+
+RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/*
+RUN update-ca-certificates
 
 LABEL version="0.1.1"
 LABEL author "Damian Janiszewski"
