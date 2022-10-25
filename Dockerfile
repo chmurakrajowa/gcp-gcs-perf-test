@@ -21,7 +21,7 @@ COPY gcp-gcs-perf-test.go config.go init.go /go/src/
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -v -a -tags 'static netgo' -ldflags '-w' gcp-gcs-perf-test.go config.go init.go
 
 # Stage 1: running container 
-FROM alpine
+FROM gcr.io/google.com/cloudsdktool/google-cloud-cli:alpine
 
 RUN apk update && apk add ca-certificates && rm -rf /var/cache/apk/*
 RUN update-ca-certificates
