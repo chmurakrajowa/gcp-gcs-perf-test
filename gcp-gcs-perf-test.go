@@ -160,7 +160,7 @@ func getBucketMetadata(w io.Writer, bucketName string) (*storage.BucketAttrs, er
 		fmt.Fprintf(w, "LogObjectPrefix: %v\n", attrs.Logging.LogObjectPrefix)
 	}
 	if attrs.CORS != nil {
-		fmt.Fprintln(w, "CORS:\n")
+		fmt.Fprint(w, "CORS:\n")
 		for _, v := range attrs.CORS {
 			fmt.Fprintf(w, "\tMaxAge: %v\n", v.MaxAge)
 			fmt.Fprintf(w, "\tMethods: %v\n", v.Methods)
